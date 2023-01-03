@@ -11,9 +11,7 @@ pipeline {
                  bat 'mvn clean install'
             }
         }
-    }
-    stages {
-        stage('package') {
+         stage('package') {
             steps {
                  bat 'mvn package'
             }
