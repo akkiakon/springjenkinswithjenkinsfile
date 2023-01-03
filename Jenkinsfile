@@ -1,18 +1,22 @@
 pipeline {
     agent any
-	tools {
-	    maven '3.6.3'
-	 	}
-	stages {
-        stage('Clean and Install') {
+
+    tools {
+        maven "3.6.3"
+    }
+
+    stages {
+        stage('Build') {
             steps {
-                bat 'mvn clean install'
+                 bat 'mvn clean install'
             }
         }
-        stage ('Package'){
+    }
+    stages {
+        stage('package') {
             steps {
-                bat 'mvn package'
-             }
+                 bat 'mvn package'
+            }
         }
     }
 }
