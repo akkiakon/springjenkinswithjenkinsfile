@@ -1,8 +1,8 @@
 pipeline {
     agent any
     stages {
-    
-    stage('git') {
+        
+        stage('git') {
             steps {
                 git url: 'https://github.com/akkiakon/springjenkinswithjenkinsfile.git'
             }
@@ -53,13 +53,5 @@ pipeline {
               	)
             }
         }
-    
-        stage('code quality') {
-            steps {
-            	withSonarQubeEnv('SonarQube Server'){
-            	bat 'mvn sonar:sonar'
-            		}
-        		}
-       }
-}
+    }
 }
